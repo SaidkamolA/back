@@ -44,4 +44,5 @@ yarl==1.18.3
 pandas>=2.0.0
 openpyxl>=3.1.0
 dj-database-url==2.1.0
+whitenoise==6.6.0
 
