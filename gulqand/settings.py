@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 from datetime import timedelta
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -81,8 +82,9 @@ CORS_ALLOWED_ORIGINS = [
     "http://192.168.0.104:3001",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    "https://gulqand.onrender.com",
+    "https://gulqand-backend.onrender.com",
 ]
-
 
 CORS_ALLOW_CREDENTIALS = True
 
@@ -128,14 +130,10 @@ WSGI_APPLICATION = 'gulqand.wsgi.application'
 
 # Database
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'gulqand',
-        'USER': 'postgres',
-        'PASSWORD': '1234',
-        'HOST': '127.0.0.1',
-        'PORT': 5432,
-    }
+    'default': dj_database_url.config(
+        default='postgres://postgres:1234@127.0.0.1:5432/gulqand',
+        conn_max_age=600
+    )
 }
 
 # Password validation
