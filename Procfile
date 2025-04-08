@@ -1,2 +1,2 @@
-web: gunicorn gulqand.wsgi:application --workers 2
+web: PYTHONPATH=$PYTHONPATH:. gunicorn gulqand.wsgi:application
 bot: python bot/run_bot.py
