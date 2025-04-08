@@ -85,7 +85,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
     "https://gulqand.onrender.com",
     "https://gulqand-backend.onrender.com",
-    'https://www.gulqand.uz'
+    "https://www.gulqand.uz",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
