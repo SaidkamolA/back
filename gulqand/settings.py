@@ -131,10 +131,10 @@ WSGI_APPLICATION = 'gulqand.wsgi.application'
 
 # Database
 DATABASES = {
-    'default': dj_database_url.config(
-        default='postgres://postgres:1234@127.0.0.1:5432/gulqand',
-        conn_max_age=600
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 # Password validation
